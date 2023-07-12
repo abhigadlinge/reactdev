@@ -1,0 +1,224 @@
+:root {
+  --mainColor: #1f1e28;
+  --subcolor: #222b45;
+  --secondaryColor: #0170ca;
+  --textColor: #eee;
+}
+
+* {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+.form-container {
+  min-height: 100vh;
+  background-color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--textColor);
+}
+
+.closebtn {
+  top: 5rem;
+  right: 30rem;
+  position: absolute;
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+
+.closebtn:hover {
+  color: #0170ca;
+}
+
+.form-container form {
+  padding: 2rem;
+  width: 50rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  background-color: var(--subcolor);
+  text-align: center;
+}
+
+.form-container form h3 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: var(--textColor);
+}
+
+.form-container form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: var(--mainColor);
+  padding: 1.2rem 1.4rem;
+  font-size: 1.8rem;
+  color: var(--textColor);
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+}
+
+.form-container form p {
+  padding-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.form-container form p a {
+  color: #0170ca;
+}
+
+.form-container form p a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  background-color: #0170ca8e;
+  /* border: .2rem solid #0170ca; */
+  color: white;
+  font-weight: 900;
+
+  font-size: 1.8rem;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #0170ca;
+  color: white;
+}
+
+.navbar img {
+  width: 6rem;
+  padding: 1rem;
+  margin-top: 0%;
+  cursor: pointer;
+}
+
+.login {
+  background-color: #0170ca;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+  margin: 0rem 1rem;
+}
+
+.signup {
+  background-color: transparent;
+  border: 0.2rem solid #0170ca;
+  color: #0170ca;
+  font-size: 1.8rem;
+  margin: 0rem 1rem;
+  padding: 0.6rem 1.4rem;
+}
+
+.divcontainer {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.8rem;
+  margin-top: 2.4rem;
+}
+
+.divcontainer .line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: white;
+  margin-top: 1.1rem;
+}
+
+.iconcontainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  gap: 0.1rem;
+  background-color: hsl(207, 99%, 40%);
+  color: white;
+  margin: 1rem;
+  padding: 0rem 0.9rem;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+}
+
+.icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  color: white;
+  margin-top: 0.7rem;
+}
+
+.or {
+  color: var(--textColor);
+}
+
+.icon1 {
+  background-color: rgb(255, 64, 0);
+}
+
+.icon3 {
+  background-color: black;
+}
+
+.terms {
+  text-transform: none;
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+    overflow-x: hidden;
+  }
+
+  .form-container {
+    padding: 4rem;
+  }
+
+  .form-container .form {
+    width: 35rem;
+  }
+
+  .iconcontainer{
+    margin-top: 3rem;
+  }
+  .icons{
+    margin: .3rem;
+  }
+
+  .closebtn{
+    top: 5rem;
+    right: 5rem;
+  }
+}
