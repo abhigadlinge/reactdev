@@ -11,10 +11,17 @@ import { Cards } from "./Card";
 import { Courses } from "./Courses";
 import {FaSearch} from "react-icons/fa"
 import { FaGithub } from "react-icons/fa";
+import { Navbar } from "./Navbar";
+import { Outlet, NavLink , useNavigate } from "react-router-dom";
+
 
 export const Home = () => {
+
+
   return (
     <main className="home">
+    <Navbar />
+
       <div className="herocontainer">
         <div class="homeabout">
           <h2 className="homeheader">aisense</h2>

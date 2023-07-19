@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { Login } from "./Login";
 import { Register } from "./Register";
 import { Home } from "./Home";
+import { Outlet, Link, NavLink, useNavigate, Navigate } from "react-router-dom";
+
 
 
 
@@ -13,75 +15,26 @@ export const Navbar = () => {
 
 	const navRef = useRef();
 
+	const Navigate = useNavigate() ;
+
 	const showsignNavbar = () => {
 		navRef.current.classList.toggle(
 			"responsive_nav"
 		);
 	};
 
-
-	const [showNavbar, setShowNavbar] = useState(true);
-	const [showLogin, setShowLogin] = useState(false);
-	const [showSignUp, setShowSignUp] = useState(false);
-	const [showHero, setShowHero] = useState(true);
-  
-	const handleLoginClick = () => {
-	  setShowLogin(true);
-	  setShowSignUp(false);
-	  setShowNavbar(false)
-	  setShowHero(false);
-  
-	};
-  
-	const handleSignUpClick = () => {
-	  setShowSignUp(true);
-	  setShowLogin(false);
-	  setShowNavbar(false)
-	  setShowHero(false);
-  
-	};
-  
-	const handleJumpToLogin = () => {
-	  setShowLogin(true);
-	  setShowSignUp(false);
-	  setShowNavbar(false)
-	  setShowHero(false);
-	};
-  
-	const handleJumpToSignUp = () => {
-	  setShowSignUp(true);
-	  setShowLogin(false);
-	  setShowNavbar(false)
-	  setShowHero(false);
-	};
-  
-	const handleLoginSignupClick = () => {
-	  setShowLogin(false);
-	  setShowSignUp(false);
-	};
-  
-	const handleBackToNavbar = () => {
-	  setShowLogin(false);
-	  setShowSignUp(false);
-	  setShowNavbar(true);
-	  setShowHero(true);
-	};
-  
-  
 	return (
   
-	  <div>
-  
-		{showNavbar &&  (
+	  
   
 			<header>
-			<h3  onClick={handleLoginSignupClick} ><img src="favicon.ico" className="logo"></img></h3>
+			 <Link to="/"> <h3><img src="favicon.ico" className="logo"></img></h3> </Link>
 			<nav ref={navRef}>
 				<a href="/#">About</a>
 				<a href="/#">Courses</a>
 				<a href="/#">Discuss</a>
-				<a href="/#"  onClick={handleLoginClick} className="login">Login</a>
-				<a href="/#"  onClick={handleSignUpClick} className="signup">Register</a>
+				<Link to="/Login"> <p  className="login">Login</p> </Link>
+				<Link to="/Register" > <p className="signup">Register</p> </Link>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showsignNavbar}>
@@ -95,16 +48,7 @@ export const Navbar = () => {
 			</button>
 		</header>
   
-		)}
-		{showLogin && <Login jumpToSignUp={handleJumpToSignUp}  handleBackToNavbar = {handleBackToNavbar} />}
-		{showSignUp && <Register jumpToLogin={handleJumpToLogin} handleBackToNavbar = {handleBackToNavbar} />}
 		
-		{showHero && (
-		  <div className="hero">
-			<Home /> 
-		  </div>
-		)}
-	  </div>
 	);
   };
   

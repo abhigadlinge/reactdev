@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { LoginSign } from "./LoginSign";
+import { Outlet, Link, NavLink, useNavigate, Navigate } from "react-router-dom";
+
 // import "./LoginSign.css";
 
 export const Register = (props) => {
@@ -23,7 +25,9 @@ export const Register = (props) => {
 
   return (
     <div className="form-container">
-      <h1 onClick={handleBackToNavbar} className="closebtn"> close </h1>
+      <Link to="/">
+        <h1 className="closebtn">close</h1>
+      </Link>
       <form onSubmit={handleSubmit}>
         <h3>Signup</h3>
         <input
@@ -76,10 +80,10 @@ export const Register = (props) => {
         <LoginSign />
 
         <p>
-          already have an account?{" "}
-          <a onClick={jumpToLogin} className="jump">
-            login now
-          </a>
+          already have an account?
+          <Link to="/Login">
+            <a className="jump">  login now </a>
+          </Link>
         </p>
         <p className="terms">
           By signing up you agree to our <a>Terms of Use</a>
